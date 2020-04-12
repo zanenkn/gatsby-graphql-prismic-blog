@@ -10,7 +10,7 @@ const IndexPage = props => (
       <SEO title="My blog" keywords={[`blog`, `gatsby`, `prismic`]} />
       {props.data.articles.edges.map(article => (
         <Article 
-        id={article.node.id[0]} 
+        id={article.node.id} 
         data={article.node.data} />
       ))}
     </div>
