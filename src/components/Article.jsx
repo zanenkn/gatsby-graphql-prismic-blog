@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const Article = () => {
+const Article = (props) => {
   return (
-    <Link to='/' className='c-article'>
-      <img alt='' src='https://source.unsplash.com/random/800x600' />
-      <h2>Name</h2>
+    <Link to={`/blog/${props.id}`} className="c-article">
+      <div className='w-1/3 h-64 overflow-hidden flex'>
+        <img className='object-cover' alt={props.data.image.alt} src={props.data.image.url} />
+      </div>
+      
+      <h2>{props.data.title.text}</h2>
     </Link>
   )
 }
