@@ -27,9 +27,9 @@ const Post = (props) => {
 export default Post
 
 export const postQuery = graphql`
-  query Post($id: String) {
-    post: prismicArticle(id: { eq: $id }) {
-      id
+  query Post($uid: String) {
+    post: prismicArticle(uid: { eq: $uid }) {
+      uid
       data {
         title {
           text

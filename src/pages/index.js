@@ -10,7 +10,7 @@ const IndexPage = props => (
       <SEO title="My blog" keywords={[`blog`, `gatsby`, `prismic`]} />
       {props.data.articles.edges.map(article => (
         <Article 
-        id={article.node.id} 
+        uid={article.node.uid} 
         data={article.node.data} />
       ))}
     </div>
@@ -24,16 +24,16 @@ export const IndexQuery = graphql`
     articles: allPrismicArticle {
       edges {
         node {
-          id
           data {
+            image {
+              alt
+              url
+            }
             title {
               text
             }
-            image {
-              url
-              alt
-            }
           }
+          uid
         }
       }
     }

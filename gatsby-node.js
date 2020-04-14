@@ -13,7 +13,7 @@ exports.createPages = ({ graphql, actions }) => {
             allPrismicArticle {
               edges {
                 node {
-                  id
+                  uid
                 }
               }
             }
@@ -28,10 +28,10 @@ exports.createPages = ({ graphql, actions }) => {
         const posts = result.data.allPrismicArticle.edges
         posts.forEach((post, index) => {
           createPage({
-            path: `/blog/${post.node.id}/`,
+            path: `/blog/${post.node.uid}/`,
             component: blogPost,
             context: {
-              id: post.node.id,
+              uid: post.node.uid,
             },
           })
         })
